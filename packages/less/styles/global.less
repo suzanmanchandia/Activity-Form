@@ -1,0 +1,233 @@
+#main {
+	margin-top: 3em;
+}
+
+.form-pane {
+	padding-top: 1em;
+	padding-bottom: 100px;
+	.input-top {
+		margin-top: 5px;
+		font-weight: normal;
+	}
+}
+
+#form_entry {
+	//padding-bottom: 100px;
+}
+
+.form-label {
+	display: inline-block;
+	max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+.form-action {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: fadeout(@jumbotron-bg, 12%);
+	padding: 12px 0;
+	text-align: center;
+	z-index: 99999999;
+	//		.text-center;
+	//		.btn-prev {
+	//			.pull-left;
+	//		}
+	//		.btn-next {
+	//			.pull-right;
+	//		}
+	.btn-prev, .btn-next {
+		.pull-left;
+		margin-right: 2px;
+	}
+	input {
+		.pull-right;
+		margin-left: @navbar-margin-bottom;
+	}
+}
+
+.form-control[contenteditable] {
+	min-height: 100px;
+}
+
+.uploader {
+	.uploads {
+		.well;
+		cursor: pointer;
+		border: 3px solid @well-bg;
+		min-height: 50px;
+		&.dz-drag-hover {
+			border: 3px dashed @nav-tabs-border-color;
+		}
+		&.dz-clickable {
+			&:before {
+				display: block;
+				text-align: center;
+				content: "Click to upload or drag and drop file(s)";
+				font-size: 2em;
+			}
+			&.dz-max-files-reached:before {
+				content: "";
+			}
+		}
+		.dz-progress {
+			.progress;
+			margin-bottom: 0;
+			display: none;
+			.dz-upload {
+				.progress-bar;
+				.progress-bar-striped;
+				.animation(progress-bar-stripes 2s linear infinite);
+			}
+		}
+		.dz-processing {
+			.dz-progress {
+				display: block;
+			}
+		}
+		.dz-success {
+			.dz-progress {
+				display: none;
+			}
+		}
+		.dz-success {
+			.dz-progress .dz-upload {
+				background-image: none;
+				.animation(none);
+			}
+		}
+	}
+	.dz-error-message {
+		color: @alert-danger-bg;
+	}
+	.dz-success .dz-error-message {
+		display: none;
+	}
+	&.dz-clickable {
+		cursor: pointer;
+		* {
+			cursor: default;
+		}
+	}
+	.dz-message {
+		opacity: 1;
+		-ms-filter: none;
+		filter: none;
+	}
+	&.dz-drag-hover {
+		border-color: rgba(0,0,0,0.15);
+		background: rgba(0,0,0,0.04);
+		.dz-message {
+			opacity: 0.15;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=15)";
+			filter: alpha(opacity=15);
+		}
+	}
+	.dz-remove {
+		.btn;
+		.btn-sm;
+		.btn-danger;
+	}
+	&.dz-started {
+		.dz-message {
+			display: none;
+			display: block;
+			opacity: 0;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+			filter: alpha(opacity=0);
+		}
+	}
+	&.dz-square {
+		.dz-default {
+			&.dz-message {
+				background-position: 0 -123px;
+				width: 268px;
+				margin-left: -134px;
+				height: 174px;
+				margin-top: -87px;
+			}
+		}
+	}
+
+	&.dz-clickable .dz-message,
+	&.dz-clickable .dz-message span {
+		cursor: pointer;
+	}
+	.dz-preview, {
+		background: rgba(255,255,255,0.8);
+		position: relative;
+		margin: 5px;
+		vertical-align: top;
+		border: 1px solid #acacac;
+		padding: 6px 6px 6px 6px;
+		font-size: 14px;
+	}
+	.dz-preview.dz-file-preview [data-dz-thumbnail],
+	.dz-preview .dz-error-mark, {
+		display: none;
+		position: absolute;
+		top: -5px;
+		left: -20px;
+		background: rgba(245,245,245,0.8);
+		padding: 8px 10px;
+		color: #800;
+		min-width: 140px;
+		max-width: 500px;
+		z-index: 500;
+	}
+	.dz-default {
+		&.dz-message {
+			span {
+				display: none;
+			}
+		}
+	}
+	a.dz-remove:hover, {
+		background-position: -7px -400px;
+	}
+	.dz-details {
+		margin-bottom: 5px;
+	}
+	[data-dz-thumbnail] {
+		max-width: 100%;
+		box-sizing: border-box;
+		border: 2px solid @gray-lighter;
+	}
+}
+
+.btn-logout {
+	.btn;
+	.btn-danger;
+	.btn-xs;
+	.pull-right;
+	position: relative;
+	top: 15px;
+	margin-left: 3px;
+}
+.btn-review {
+	.btn;
+	.btn-info;
+	.btn-xs;
+	.pull-right;
+	position: relative;
+	top: 15px;
+}
+// Ajax Spinner
+.activity-indicator {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	font-size: 40px !important;
+	@activity-offset: -17px;
+	margin: @activity-offset 0 0 @activity-offset;
+	z-index: 9999999;
+}
+// Bades int tabs
+.badge-tabs {
+	a {
+		height: 40px;
+	}
+}
+

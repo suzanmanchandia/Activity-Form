@@ -1,0 +1,48 @@
+{
+	"name": "roski/form",
+	"description": "USC Roski Staff Form.",
+	"keywords": ["framework", "laravel"],
+	"license": "MIT",
+	"require": {
+		"laravel/framework": "4.2.*",
+		"doctrine/dbal": "dev-master",
+		"edvinaskrucas/notification": "3.*",
+        "vespakoen/menu": "dev-master",
+		"guzzlehttp/guzzle": "~4",
+		"mpdf/mpdf": "dev-master"
+	},
+	"autoload": {
+		"classmap": [
+			"app/commands",
+			"app/controllers",
+			"app/models",
+			"app/database/migrations",
+			"app/database/seeds",
+			"app/tests/TestCase.php"
+		]
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize"
+		],
+		"post-update-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize",
+            "php artisan form:update"
+		],
+		"post-create-project-cmd": [
+			"php artisan key:generate"
+		]
+	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "stable",
+	"require-dev": {
+		"barryvdh/laravel-ide-helper": "dev-master",
+        "barryvdh/laravel-debugbar": "1.*",
+        "itsgoingd/clockwork": "1.*",
+		"mockery/mockery": "dev-master"
+	}
+}
